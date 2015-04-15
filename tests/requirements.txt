@@ -1,0 +1,4 @@
+httmock==1.2.3
+mock==1.0.1
+requests==2.6.0
+wsgiref==0.1.2
