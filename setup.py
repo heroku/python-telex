@@ -28,7 +28,7 @@ setup(
     version=version,
     description='Python telex client.',
     long_description=readme,
-    license='BSD',
+    license='MIT',
     author='Jeremy West',
     author_email='jeremy@heroku.com',
     url='https://github.com/heroku/python-telex',
@@ -39,7 +39,7 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python',
         "Programming Language :: Python :: 2",
