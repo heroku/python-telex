@@ -28,7 +28,7 @@ class Client(object):
     def add_followup(self, message_uuid, body):
         return self._post('/producer/messages/{}'.format(message_uuid), {'body': body})
 
-    def post_message(self, target_type, target_id, title, body, action):
+    def post_message(self, target_type, target_id, body, title, action):
         payload = {
             'title': title,
             'body': body,
