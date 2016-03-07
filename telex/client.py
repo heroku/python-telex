@@ -46,8 +46,12 @@ class Client(object):
     def _post(self, path, payload):
         try:
             response = self.session.post('{}{}'.format(self.telex_url, path), data=json.dumps(payload))
-            response.raise_for_status()
         except requests.exceptions.RequestException as e:
-            raise RequestException(request=e.request, response=e.response)
+            raise RequestException(requests_exc=e)
+
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            raise RequestException(requests_exc=e, response=response)
 
         return response.json()
