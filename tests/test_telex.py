@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import unittest
 from httmock import urlmatch, response, HTTMock
 
@@ -17,7 +14,7 @@ def message_mock(url, request):
     return response(200, content, headers=mock_headers, request=request)
 
 
-@urlmatch(netloc=r'^.*?telex\.mock\.com$', path=r'/producer/messages/[^/]+$', method='POST')
+@urlmatch(netloc=r'^.*?telex\.mock\.com$', path=r'/producer/messages/[^/]+/followups$', method='POST')
 def followup_mock(url, request):
     content = {'success': True}
     return response(200, content, headers=mock_headers, request=request)
@@ -48,7 +45,3 @@ class TelexTestCase(unittest.TestCase):
         with HTTMock(followup_mock):
             r = self.client.add_followup(**payload)
         self.assertTrue(r.get('success'))
-
-
-if __name__ == '__main__':
-    unittest.main()
