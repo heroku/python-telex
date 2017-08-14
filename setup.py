@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import absolute_import
+from telex import __version__
 
 try:
     from setuptools import setup
@@ -14,15 +15,13 @@ requires = [
 
 with open('README.md') as f:
     readme = f.read()
-with open('LICENSE') as f:
-    license = f.read()
 
 setup(
     name='telex',
-    version='0.0.1',
+    version=__version__,
     description='Python telex client.',
     long_description=readme,
-    license=license,
+    license='MIT',
     author='Jeremy West',
     author_email='jeremy@heroku.com',
     url='https://github.com/heroku/python-telex',
@@ -37,7 +36,6 @@ setup(
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

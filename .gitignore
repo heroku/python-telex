@@ -5,3 +5,5 @@ dist/*
 *.pyc
 .cache/
 .tox/
+.venv/
+.env
