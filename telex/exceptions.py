@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 class RequestException(IOError):
     def __init__(self, *args, **kwargs):
         self.requests_exc = kwargs.pop('requests_exc', None)

@@ -1,3 +1,9 @@
+telex.egg-info*
+*/telex.egg-info/*
+build/*
+dist/*
 *.pyc
+.cache/
+.tox/
 .venv/
 .env

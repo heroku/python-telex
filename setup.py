@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
-import re
-from codecs import open
+from __future__ import absolute_import
+from telex import __version__
 
 try:
     from setuptools import setup
@@ -11,21 +10,15 @@ except ImportError:
 
 
 requires = [
-    'requests',
+    'requests>=2.6.0',
 ]
 
-version = ''
-with open('telex/__init__.py', 'r') as fd:
-    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
-                        fd.read(), re.MULTILINE).group(1)
-
-with open('README.md', 'r', 'utf-8') as fd:
-    readme = fd.read()
-
+with open('README.md') as f:
+    readme = f.read()
 
 setup(
     name='telex',
-    version=version,
+    version=__version__,
     description='Python telex client.',
     long_description=readme,
     license='MIT',
@@ -42,7 +35,9 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python',
-        "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 )
